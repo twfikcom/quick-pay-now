@@ -4,8 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QuickPayNow.com - Premium Domain For Sale</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind Config -->
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -25,60 +32,266 @@
                 900: '#0c4a6e',
               },
               accent: {
-                500: '#10b981', // Emerald green for money/success
+                500: '#10b981',
                 600: '#059669',
+                400: '#34d399',
               }
             },
             animation: {
               blob: "blob 7s infinite",
+              "fade-in": "fadeIn 0.5s ease-out",
             },
             keyframes: {
               blob: {
-                "0%": {
-                  transform: "translate(0px, 0px) scale(1)",
-                },
-                "33%": {
-                  transform: "translate(30px, -50px) scale(1.1)",
-                },
-                "66%": {
-                  transform: "translate(-20px, 20px) scale(0.9)",
-                },
-                "100%": {
-                  transform: "translate(0px, 0px) scale(1)",
-                },
+                "0%": { transform: "translate(0px, 0px) scale(1)" },
+                "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                "100%": { transform: "translate(0px, 0px) scale(1)" },
               },
+              fadeIn: {
+                "0%": { opacity: "0", transform: "translateY(10px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              }
             },
           },
         },
       }
     </script>
-    <style>
-      body {
-        font-family: 'Inter', 'Cairo', sans-serif;
-      }
-      /* Apply Cairo specifically when Arabic is active if needed, though the list above handles fallback */
-      :lang(ar) {
-        font-family: 'Cairo', sans-serif;
-      }
-      .gradient-text {
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        background-image: linear-gradient(to right, #0284c7, #10b981);
-      }
-    </style>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
   <script type="importmap">
 {
   "imports": {
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0"
   }
 }
 </script>
 </head>
-  <body class="bg-slate-50 text-slate-900 antialiased">
-    <div id="root"></div>
+  <body class="bg-slate-50 text-slate-900 antialiased font-sans transition-colors duration-300">
+    
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <span class="text-2xl font-black text-brand-700 tracking-tight">
+              QuickPay<span class="text-accent-500">Now</span>
+            </span>
+          </div>
+          <div class="flex items-center gap-3 sm:gap-4">
+            <button id="lang-toggle" class="flex items-center gap-1 text-slate-600 hover:text-brand-600 transition-colors font-semibold text-sm">
+              <i data-lucide="globe" class="w-4 h-4"></i>
+              <span id="nav-lang-label">العربية</span>
+            </button>
+            <button onclick="scrollToContact()" class="bg-brand-600 hover:bg-brand-700 text-white px-4 sm:px-6 py-2 rounded-full font-bold transition-all shadow-lg hover:shadow-brand-500/30 text-sm sm:text-base whitespace-nowrap">
+              <span id="nav-cta">Make an Offer</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-grow">
+      <!-- Hero -->
+      <div class="relative bg-gradient-to-b from-brand-50 to-white pt-20 pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          
+          <div class="inline-flex items-center gap-2 bg-green-100 border border-green-200 text-green-800 px-4 py-1.5 rounded-full font-semibold text-sm mb-8 shadow-sm">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+            <span id="hero-badge">This domain is available for immediate sale</span>
+          </div>
+
+          <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 tracking-tight mb-6 leading-tight" id="hero-title">
+            <span class="text-brand-700">QuickPay</span>
+            <span class="text-accent-500">Now</span>
+            <span class="text-slate-400">.com</span>
+          </h1>
+
+          <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600 mb-10 leading-relaxed" id="hero-desc">
+            The perfect name for payment platforms, fintech apps, or express transfer services. Start your next venture with a name that is powerful, memorable, and instills trust.
+          </p>
+
+          <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <button onclick="scrollToContact()" class="w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white text-lg font-bold rounded-xl shadow-xl hover:shadow-2xl hover:shadow-brand-500/20 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2 group">
+              <span id="hero-cta-buy">Buy Now or Make Offer</span>
+              <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180"></i>
+            </button>
+            <a href="#features" class="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 border border-slate-200 hover:border-brand-300 hover:bg-slate-50 text-lg font-semibold rounded-xl transition-all flex items-center justify-center">
+              <span id="hero-cta-why">Why this domain?</span>
+            </a>
+          </div>
+
+          <div id="hero-benefits" class="mt-12 flex flex-wrap justify-center gap-y-4 gap-x-8 text-sm text-slate-500 font-medium">
+            <!-- Benefits injected via JS -->
+          </div>
+        </div>
+
+        <!-- Hero Background Decoration -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-5xl opacity-30 pointer-events-none">
+          <svg viewBox="0 0 100 100" class="w-full h-full fill-brand-100">
+            <circle cx="50" cy="50" r="40" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <section class="bg-brand-900 py-16 text-white overflow-hidden relative">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div id="stats-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:divide-x md:divide-white/10 rtl:md:divide-x-reverse">
+            <!-- Stats injected via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 id="features-title" class="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">
+              Why is <span class="text-brand-600">QuickPayNow.com</span> a Golden Opportunity?
+            </h2>
+            <p id="features-subtitle" class="text-xl text-slate-500 max-w-3xl mx-auto">
+              Choosing the right name is the first step to your digital success.
+            </p>
+          </div>
+
+          <div id="features-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Features injected via JS -->
+          </div>
+        </div>
+      </section>
+      
+      <!-- Contact Section -->
+      <div id="contact-section" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+         <div class="absolute top-0 right-0 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+         <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+         
+         <div class="max-w-4xl mx-auto px-4 relative z-10">
+           <div class="text-center mb-12">
+             <h2 id="contact-title" class="text-3xl md:text-4xl font-bold mb-4">Interested in owning this domain?</h2>
+             <p id="contact-subtext" class="text-slate-300 text-lg max-w-2xl mx-auto">Submit your offer now and we will get back to you as soon as possible. The transfer process is secure and guaranteed.</p>
+           </div>
+           
+           <!-- Success Message (Hidden by default) -->
+           <div id="success-message" class="hidden bg-white rounded-2xl p-8 md:p-12 text-center shadow-2xl animate-fade-in text-slate-900 max-w-lg mx-auto">
+              <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+              </div>
+              <h3 id="success-title" class="text-2xl font-bold mb-4">Offer Received Successfully!</h3>
+              <p id="success-msg" class="text-slate-600 mb-8">
+                Thank you for your interest in QuickPayNow.com. We have received your offer and will reply via email within 24 hours.
+              </p>
+              <button onclick="resetForm()" id="btn-reset" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold py-3 px-8 rounded-xl transition-colors">
+                Send Another Offer
+              </button>
+           </div>
+
+           <!-- Contact Form -->
+           <form id="offer-form" class="bg-white rounded-2xl shadow-2xl p-6 md:p-10 max-w-2xl mx-auto text-slate-900 text-left transition-all duration-300" action="https://formspree.io/f/xblpnbep" method="POST">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label id="label-name" for="name" class="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
+                <input required name="name" type="text" id="name" placeholder="John Doe" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all">
+              </div>
+              <div>
+                <label id="label-email" for="email" class="block text-sm font-bold text-slate-700 mb-2">Email Address</label>
+                <input required name="email" type="email" id="email" placeholder="john@company.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all">
+              </div>
+            </div>
+            
+            <div class="mb-6">
+              <label id="label-offer" for="offer" class="block text-sm font-bold text-slate-700 mb-2">Offer Amount (USD)</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-4 rtl:right-0 rtl:pr-4 rtl:left-auto flex items-center pointer-events-none">
+                  <span class="text-slate-500 font-bold">$</span>
+                </div>
+                <input required name="offer" type="number" min="100" id="offer" placeholder="5000" class="w-full px-4 py-3 pl-8 rtl:pl-4 rtl:pr-8 rounded-lg border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all">
+              </div>
+              <p id="min-offer" class="text-xs text-slate-500 mt-2">Minimum offer is $100</p>
+            </div>
+
+            <div class="mb-8">
+              <label id="label-msg" for="message" class="block text-sm font-bold text-slate-700 mb-2">Additional Message (Optional)</label>
+              <textarea name="message" id="message" rows="3" placeholder="Do you have any other questions?" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all resize-none"></textarea>
+            </div>
+
+            <div id="error-message" class="hidden mb-6 p-3 bg-red-50 text-red-600 text-sm rounded-lg text-center">
+              Something went wrong. Please try again.
+            </div>
+
+            <button type="submit" id="btn-submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl hover:shadow-brand-500/20 transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed group">
+              <i data-lucide="send" class="w-5 h-5 group-disabled:hidden rtl:rotate-180"></i>
+              <i data-lucide="loader-2" class="w-5 h-5 animate-spin hidden group-disabled:block"></i>
+              <span id="btn-submit-text">Submit Offer</span>
+            </button>
+
+            <!-- WhatsApp Button Inside Form -->
+            <div class="mt-6">
+              <div class="relative flex py-2 items-center mb-4">
+                <div class="flex-grow border-t border-slate-200"></div>
+                <span id="or-text" class="flex-shrink-0 mx-4 text-slate-400 text-xs uppercase font-semibold tracking-wider">OR</span>
+                <div class="flex-grow border-t border-slate-200"></div>
+              </div>
+
+              <a href="https://wa.me/201010373331" target="_blank" rel="noopener noreferrer" class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl hover:shadow-[#25D366]/20 transition-all flex items-center justify-center gap-2 group">
+                 <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current group-hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.357-5.207c0-5.42 4.409-9.85 9.814-9.85 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.42-4.413 9.85-9.834 9.85Zm0-18C6.141 3.785 2.204 7.723 2.204 12.564c0 1.546.402 3.042 1.167 4.368L2.151 22l5.17-1.356c1.27.696 2.72 1.064 4.221 1.064 5.931 0 10.762-4.832 10.762-10.785 0-2.875-1.119-5.575-3.152-7.609C17.117 1.28 14.416.165 12.051.165Z"/>
+                </svg>
+                <span id="btn-whatsapp-text">Or chat directly on WhatsApp</span>
+              </a>
+            </div>
+
+            <p id="disclaimer" class="text-center text-xs text-slate-400 mt-6">
+              This offer is non-binding. The sale will be conducted securely via a third-party escrow service.
+            </p>
+          </form>
+         </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="text-center md:text-left rtl:md:text-right transition-all">
+          <span class="text-xl font-black text-slate-800 tracking-tight block mb-2">
+            QuickPay<span class="text-accent-500">Now</span>.com
+          </span>
+          <p id="footer-rights" class="text-slate-500 text-sm">
+            © 2024 All rights reserved.
+          </p>
+        </div>
+        
+        <div class="flex gap-6 text-sm font-medium text-slate-600">
+          <a href="#" id="footer-privacy" class="hover:text-brand-600 transition-colors">Privacy Policy</a>
+          <a href="#" id="footer-terms" class="hover:text-brand-600 transition-colors">Terms of Service</a>
+          <button onclick="scrollToContact()" id="footer-contact" class="hover:text-brand-600 transition-colors">Contact Us</button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/201010373331"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl hover:bg-[#20bd5a] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2 group"
+      aria-label="Chat on WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" class="w-6 h-6 sm:w-8 sm:h-8 fill-current" xmlns="http://www.w3.org/2000/svg">
+         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.357-5.207c0-5.42 4.409-9.85 9.814-9.85 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.42-4.413 9.85-9.834 9.85Zm0-18C6.141 3.785 2.204 7.723 2.204 12.564c0 1.546.402 3.042 1.167 4.368L2.151 22l5.17-1.356c1.27.696 2.72 1.064 4.221 1.064 5.931 0 10.762-4.832 10.762-10.785 0-2.875-1.119-5.575-3.152-7.609C17.117 1.28 14.416.165 12.051.165Z"/>
+      </svg>
+      <span id="fab-whatsapp-text" class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap font-bold">
+        WhatsApp Us
+      </span>
+    </a>
+
+    <script src="script.js"></script>
   </body>
 </html>

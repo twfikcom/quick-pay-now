@@ -1,0 +1,33 @@
+
+body {
+  font-family: 'Inter', 'Cairo', sans-serif;
+}
+
+:lang(ar) {
+  font-family: 'Cairo', sans-serif;
+}
+
+.font-cairo {
+  font-family: 'Cairo', sans-serif;
+}
+
+.font-sans {
+  font-family: 'Inter', sans-serif;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+/* Gradient Text Utility */
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #0284c7, #10b981);
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
