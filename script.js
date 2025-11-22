@@ -143,6 +143,17 @@ function init() {
   form.addEventListener('submit', handleFormSubmit);
 }
 
+// Loader Logic
+window.addEventListener('load', () => {
+  const loader = document.getElementById('app-loader');
+  if(loader) {
+    setTimeout(() => {
+        loader.classList.add('opacity-0');
+        setTimeout(() => loader.remove(), 500);
+    }, 500);
+  }
+});
+
 function toggleLang() {
   currentLang = currentLang === 'en' ? 'ar' : 'en';
   render();
